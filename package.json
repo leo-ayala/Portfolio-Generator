@@ -1,0 +1,28 @@
+{
+  "name": "portfolio-generator",
+  "version": "1.0.0",
+  "description": "Portfolio Generator",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leo-ayala/Portfolio-Generator.git"
+  },
+  "keywords": [
+    "portfolio",
+    "generator",
+    "node",
+    "javascript"
+  ],
+  "author": "Leo Ayala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leo-ayala/Portfolio-Generator/issues"
+  },
+  "homepage": "https://github.com/leo-ayala/Portfolio-Generator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
