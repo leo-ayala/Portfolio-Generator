@@ -127,37 +127,19 @@ const promptUser = () => {
     .then(portfolioData => {
       const pageHTML = generatePage(portfolioData);
   
-      fs.writeFile('./index.html', pageHTML, err => {
-        if (err) throw new Error(err);
-  
+      fs.writeFile('./dist/index.html', pageHTML, err => {
+        if (err) {
+          console.log(err);
+          return;
+        }
         console.log('Page created! Check out index.html in this directory to see it!');
-      });
+      
+        fs.copyFile('./src/style.css', './dist/style.css', err => {
+          if (err) {
+            console.log(err);
+            return;
+          }
+          console.log('Style sheet copied successfully!');
+        });
     });
-
-
-    // const fs = require('fs');
-
-// const profileDataArgs = process.argv.slice(2);
-
-// const [name, github] = profileDataArgs;
-
-
-
-//   fs.writeFile('index.html', generatePage(name, github), err => {
-//     if (err) throw err;
-  
-//     console.log('Portfolio complete! Check out index.html to see the output!');
-//   });
-
-
-
-
-// const printProfileData = profileDataArr => {
-//     for (let i = 0; i < profileDataArr.length; i += 1) {
-//       profileDataArr.forEach(profileItem => console.log(profileItem));
-      
-//       console.log('================');
-      
-//     }
-//   };
-//   printProfileData(profileDataArgs)
+    });
